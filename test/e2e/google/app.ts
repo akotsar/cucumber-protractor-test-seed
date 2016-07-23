@@ -4,7 +4,7 @@ export class App {
     }
 
     public openApp(): Promise<void> {
-        return browser.get('');
+        return browser.navigate().to(browser.baseUrl);
     }
 
     public goToPrivacy(): Promise<void> {
@@ -12,7 +12,7 @@ export class App {
     }
 
     public goToSearch(): Promise<void> {
-        return browser.get('');
+        return browser.navigate().to(browser.baseUrl);
     }
 
     public getCurrentUrl(): Promise<string> {

@@ -10,7 +10,7 @@ exports.config = {
 
   exclude: [],
 
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 110000,
 
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -35,6 +35,7 @@ exports.config = {
 
   onPrepare: function() {
     browser.ignoreSynchronization = true;
+    browser.manage().timeouts().implicitlyWait(2000);
   }
 
 };
