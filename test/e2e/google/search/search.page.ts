@@ -20,7 +20,7 @@ export class SearchPage {
     public clickSearch(): Promise<any> {
         this.searchButton.click();
         browser.sleep(1000);
-        return browser.wait(protractor.ExpectedConditions.visibilityOf(element(this.resultStatsLocator)));
+        return browser.wait(ExpectedConditions.visibilityOf(element(this.resultStatsLocator)));
     }
 
     public getNumberOfResults(): Promise<any> {
@@ -32,9 +32,9 @@ export class SearchPage {
 
     public goToResultsPage(page: number): Promise<any> {
         let link = this.pager.all(by.css('tbody td')).get(page).element(by.css('a'));
-        browser.wait(protractor.ExpectedConditions.elementToBeClickable(link));
+        browser.wait(ExpectedConditions.elementToBeClickable(link));
         link.click();
-        return browser.wait(protractor.ExpectedConditions.textToBePresentInElement(element(by.id('resultStats')), 'Page ' + page + ' '));
+        return browser.wait(ExpectedConditions.textToBePresentInElement(element(by.id('resultStats')), 'Page ' + page + ' '));
     }
 
     public getResults(): Promise<Promise<string>[]> {

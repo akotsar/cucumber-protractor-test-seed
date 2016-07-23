@@ -1,13 +1,26 @@
 {
     "version": "0.2.0",
     "configurations": [
-         {
-            "name": "Attach to Chrome, with sourcemaps",
-            "type": "chrome",
+        {
+            "name": "Attach to Protractor",
+            "type": "node",
             "request": "attach",
-            "port": 9222,
+            "port": 5858,
+            "sourceMaps": true
+        },
+        {
+            "name": "Launch Protractor",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+            "args": ["protractor.conf.js"],
+            //"runtimeExecutable": "",
+            "stopOnEntry": false,
+            "cwd": "${workspaceRoot}",
+            "runtimeArgs": [],
+            "env": {},
             "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
+            "outDir": null
         }
     ]
 }
