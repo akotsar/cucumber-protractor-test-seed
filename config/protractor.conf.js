@@ -3,9 +3,6 @@ var helpers = require('./helpers');
 
 exports.config = {
 
-
-  /* LOCALHOST CONFIG */
-  seleniumServerJar: "node_modules/protractor/selenium/selenium-server-standalone-2.52.0.jar",
   baseUrl: 'http://www.google.com/',
 
   exclude: [],
@@ -14,9 +11,16 @@ exports.config = {
 
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
+
   specs: [
     helpers.root('test/e2e/**/*.feature')
   ],
+
+  suites: {
+    search: helpers.root('test/e2e/**/search/*.feature'),
+    full: helpers.root('test/e2e/**/*.feature'),
+  },
+
   cucumberOpts: {
     require: [
       'test/e2e/**/*.steps.js'
@@ -32,8 +36,6 @@ exports.config = {
       'args': []
     }
   },
-
-  //seleniumArgs: ['-Dwebdriver.ie.driver=D:\\Temp\\IE\\32\\IEDriverServer.exe'],
 
   onPrepare: function() {
     browser.ignoreSynchronization = true;
