@@ -33,9 +33,10 @@ exports.config = {
     }
   },
 
+  //seleniumArgs: ['-Dwebdriver.ie.driver=D:\\Temp\\IE\\32\\IEDriverServer.exe'],
+
   onPrepare: function() {
     browser.ignoreSynchronization = true;
     browser.manage().timeouts().implicitlyWait(2000);
   }
-
 };
