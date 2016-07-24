@@ -1,4 +1,8 @@
-let chai: Chai.ChaiStatic = require('chai').use(require('chai-things')).use(require('chai-as-promised'));
+let chai: Chai.ChaiStatic = require('chai')
+    .use(require('chai-things'))
+    .use(require('chai-as-promised'))
+    .use(require('chai-string'));
+
 chai.should();
 let expect = chai.expect;
 
