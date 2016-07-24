@@ -38,6 +38,16 @@ exports.config = {
   },
 
   onPrepare: function() {
+    
+    // Global chai definition.
+    global.chai = require('chai')
+        .use(require('chai-things'))
+        .use(require('chai-as-promised'))
+        .use(require('chai-string'));
+    chai.should();
+
+    global.expect = chai.expect;
+
     browser.ignoreSynchronization = true;
     browser.manage().timeouts().implicitlyWait(2000);
   }

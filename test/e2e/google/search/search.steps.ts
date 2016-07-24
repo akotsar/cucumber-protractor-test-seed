@@ -1,13 +1,4 @@
-let chai: Chai.ChaiStatic = require('chai')
-    .use(require('chai-things'))
-    .use(require('chai-as-promised'))
-    .use(require('chai-string'));
-
-chai.should();
-let expect = chai.expect;
-
 import {binding, given, when, then} from "cucumber-tsflow";
-import Callback = cucumber.CallbackStepDefinition;
 
 import {App} from '../app';
 import {SearchPage} from './search.page';

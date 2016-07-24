@@ -1,9 +1,9 @@
 export class SearchPage {
     private query = element(by.name('q'));
     private searchButton = $('button[value="Search"]');
-    private resultStatsLocator = by.id('resultStats');
+    private resultStats = element(by.id('resultStats'));
     private pager = element(by.css('table[id="nav"]'));
-    private resultsLocator = by.css('div.srg div.g h3');
+    private resultTitles = element.all(by.css('div.srg div.g h3'));
 
     public async enterSearchQuery(query: string) {
         await this.query.sendKeys(query);
@@ -12,11 +12,11 @@ export class SearchPage {
     public async clickSearch() {
         await this.searchButton.click();
         await browser.sleep(1000);
-        await browser.wait(ExpectedConditions.visibilityOf(element(this.resultStatsLocator)));
+        await browser.wait(ExpectedConditions.visibilityOf(this.resultStats));
     }
 
     public async getNumberOfResults() {
-        let text = await element(this.resultStatsLocator).getText();
+        let text = await this.resultStats.getText();
         let stringNumber = /^About ([\d,]+) results/.exec(text)[1];
         return parseInt(stringNumber.replace(',', ''));
     }
@@ -26,14 +26,12 @@ export class SearchPage {
         await browser.wait(ExpectedConditions.elementToBeClickable(link));
         await link.click();
         await browser.sleep(1000);
-        await browser.wait(ExpectedConditions.textToBePresentInElement(element(by.id('resultStats')), 'Page ' + page + ' '));
+        await browser.wait(ExpectedConditions.textToBePresentInElement(this.resultStats, 'Page ' + page + ' '));
     }
 
-    public async getResults(): Promise<string[]> {
-        let elements = await element.all(this.resultsLocator);
-
+    public async getResults() {
         let results: string[] = [];
-        for (let el of elements) {
+        for (let el of await this.resultTitles) {
             let text = await el.getText();
             results.push(text);
         }
