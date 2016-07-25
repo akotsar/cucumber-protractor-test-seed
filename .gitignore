@@ -35,6 +35,9 @@ npm-debug.log
 /test/**/*.js
 /test/**/*.js.map
 
+# Screenshots
+/screens
+
 # IDE #
 .idea/
 *.swp

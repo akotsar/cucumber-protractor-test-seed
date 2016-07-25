@@ -4,6 +4,7 @@ export class SearchPage {
     private resultStats = element(by.id('resultStats'));
     private pager = element(by.css('table[id="nav"]'));
     private resultTitles = element.all(by.css('div.srg div.g h3'));
+    private relatedSearchesTerm = element(by.css('div#brs h3'));
 
     public async enterSearchQuery(query: string) {
         await this.query.sendKeys(query);
@@ -37,5 +38,10 @@ export class SearchPage {
         }
 
         return results;
+    }
+
+    public async getRelatedSearchesTerm() {
+        let relatedSearchesText = await this.relatedSearchesTerm.getText();
+        return relatedSearchesText.replace('Searches related to ', '');
     }
 }

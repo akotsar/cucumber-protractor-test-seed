@@ -1,5 +1,7 @@
 require('ts-node/register');
+var fs = require('fs');
 var helpers = require('./helpers');
+var config = require('./config');
 
 exports.config = {
 
@@ -18,12 +20,14 @@ exports.config = {
 
   suites: {
     search: helpers.root('test/**/search/*.feature'),
-    full: helpers.root('test/**/*.feature'),
+    privacy: helpers.root('test/**/privacy/*.feature'),
+    full: helpers.root('test/**/*.feature')
   },
 
   cucumberOpts: {
     require: [
-      'test/**/*.steps.js'
+      'test/**/*.steps.js',
+      'test/hooks.js'
     ],
     format: 'pretty'
   },
@@ -37,8 +41,7 @@ exports.config = {
     }
   },
 
-  onPrepare: function() {
-    
+  onPrepare: function() {   
     // Global chai definition.
     global.chai = require('chai')
         .use(require('chai-things'))
@@ -47,6 +50,9 @@ exports.config = {
     chai.should();
 
     global.expect = chai.expect;
+
+    // Creating the screenshots folder.
+    helpers.ensureFolder(config.screenshotsPath);
 
     browser.ignoreSynchronization = true;
     browser.manage().timeouts().implicitlyWait(2000);

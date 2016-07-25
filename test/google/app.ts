@@ -1,9 +1,5 @@
 export class App {
-    public async goToSearch() {
+    public async goToHomepage() {
         await browser.navigate().to(browser.baseUrl);
-    }
-
-    public async getCurrentUrl() {
-        return await browser.getCurrentUrl();
     }
 }

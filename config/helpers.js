@@ -1,5 +1,5 @@
 var path = require('path');
-
+var fs = require('fs');
 
 // Helper functions
 var _root = path.resolve(__dirname, '..');
@@ -34,9 +34,20 @@ function reverse(arr) {
   return arr.reverse();
 }
 
+function ensureFolder(path) {
+  if (!path) {
+    return;
+  }
+  
+  try {
+    fs.mkdirSync(path);
+  } catch(e) {}
+}
+
 exports.reverse = reverse;
 exports.hasProcessFlag = hasProcessFlag;
 exports.root = root;
 exports.rootNode = rootNode;
 exports.prependExt = prependExt;
 exports.prepend = prependExt;
+exports.ensureFolder = ensureFolder;

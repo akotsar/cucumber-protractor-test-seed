@@ -35,6 +35,7 @@
     "cucumber-tsflow": "^1.1.1",
     "es6-shim": "^0.35.0",
     "es7-reflect-metadata": "^1.6.0",
+    "fs": "0.0.2",
     "protractor": "^4.0.0",
     "protractor-cucumber-framework": "^0.6.0",
     "rimraf": "^2.5.2",
