@@ -13,17 +13,17 @@ exports.config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
   specs: [
-    helpers.root('test/e2e/**/*.feature')
+    helpers.root('test/**/*.feature')
   ],
 
   suites: {
-    search: helpers.root('test/e2e/**/search/*.feature'),
-    full: helpers.root('test/e2e/**/*.feature'),
+    search: helpers.root('test/**/search/*.feature'),
+    full: helpers.root('test/**/*.feature'),
   },
 
   cucumberOpts: {
     require: [
-      'test/e2e/**/*.steps.js'
+      'test/**/*.steps.js'
     ],
     format: 'pretty'
   },
