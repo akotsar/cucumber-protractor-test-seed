@@ -9,6 +9,8 @@
     "rimraf": "rimraf",
     "typings": "typings",
     "webdriver-manager": "webdriver-manager",
+    "tsc": "tsc",
+    "preprotractor": "tsc",
     "protractor": "npm run protractor:chrome",
     "protractor:ie": "protractor protractor.conf.ie.js",
     "protractor:chrome": "protractor protractor.conf.chrome.js",

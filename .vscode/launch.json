@@ -19,7 +19,8 @@
             "runtimeArgs": [],
             "env": {},
             "sourceMaps": true,
-            "outDir": null
+            "outDir": null,
+            "preLaunchTask": "tsc"
         },
         {
             "name": "Protractor (Chrome - Dev only)",
@@ -32,7 +33,8 @@
             "runtimeArgs": [],
             "env": {},
             "sourceMaps": true,
-            "outDir": null
+            "outDir": null,
+            "preLaunchTask": "tsc"
         },
         {
             "name": "Protractor (IE)",
@@ -45,7 +47,8 @@
             "runtimeArgs": [],
             "env": {},
             "sourceMaps": true,
-            "outDir": null
+            "outDir": null,
+            "preLaunchTask": "tsc"
         },
         {
             "name": "Protractor (IE - Dev only)",
@@ -58,7 +61,8 @@
             "runtimeArgs": [],
             "env": {},
             "sourceMaps": true,
-            "outDir": null
+            "outDir": null,
+            "preLaunchTask": "tsc"
         }
     ]
 }
