@@ -26,8 +26,8 @@ exports.config = {
 
   cucumberOpts: {
     require: [
-      'test/**/*.steps.js',
-      'test/hooks.js'
+      'test/**/*.steps.ts',
+      'test/hooks.ts'
     ],
     format: 'pretty'
   },
