@@ -1,3 +1,5 @@
+import { element, by, promise } from 'protractor';
+
 export class PrivacyPage {
     private navMenu = element(by.id('maia-nav-y'));
     private keyTermsList = element.all(by.css('.maia-article ul li a'));
@@ -6,12 +8,8 @@ export class PrivacyPage {
         await this.navMenu.element(by.linkText(item)).click();
     }
 
-    public async getKeyTerms() {
-        let result: string[] = [];
-        for (let text of await this.keyTermsList.map(x => x.getText())) {
-            result.push(await text);
-        }
-
-        return result;
+    public async getKeyTerms(): Promise<string[]> {
+        let promises: promise.Promise<string[]> = this.keyTermsList.map(x => x.getText());
+        return await promises;
     }
 }

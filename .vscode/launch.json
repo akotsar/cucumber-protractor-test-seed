@@ -13,56 +13,52 @@
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+            "protocol": "inspector",
             "args": ["protractor.conf.chrome.js"],
             "stopOnEntry": false,
             "cwd": "${workspaceRoot}",
             "runtimeArgs": [],
             "env": {},
-            "sourceMaps": true,
-            "outDir": null,
-            "preLaunchTask": "tsc"
+            "sourceMaps": true
         },
         {
             "name": "Protractor (Chrome - Dev only)",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+            "protocol": "inspector",
             "args": ["protractor.conf.chrome.js", "--cucumberOpts.tags=@dev"],
             "stopOnEntry": false,
             "cwd": "${workspaceRoot}",
             "runtimeArgs": [],
             "env": {},
-            "sourceMaps": true,
-            "outDir": null,
-            "preLaunchTask": "tsc"
+            "sourceMaps": true
         },
         {
             "name": "Protractor (IE)",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+            "protocol": "inspector",
             "args": ["protractor.conf.ie.js"],
             "stopOnEntry": false,
             "cwd": "${workspaceRoot}",
             "runtimeArgs": [],
             "env": {},
-            "sourceMaps": true,
-            "outDir": null,
-            "preLaunchTask": "tsc"
+            "sourceMaps": true
         },
         {
             "name": "Protractor (IE - Dev only)",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+            "protocol": "inspector",
             "args": ["protractor.conf.ie.js", "--cucumberOpts.tags=@dev"],
             "stopOnEntry": false,
             "cwd": "${workspaceRoot}",
             "runtimeArgs": [],
             "env": {},
-            "sourceMaps": true,
-            "outDir": null,
-            "preLaunchTask": "tsc"
+            "sourceMaps": true
         }
     ]
 }

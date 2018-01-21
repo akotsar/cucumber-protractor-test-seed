@@ -29,15 +29,15 @@ class SearchSteps {
     };
 
     @then(/^more than "(.*)" search results are displayed$/)
-    private async thenMoreThanSearchResultsAreDisplayed(minResults: number) {
+    private async thenMoreThanSearchResultsAreDisplayed(minResults: string) {
         var actual = await this.search.getNumberOfResults();
-        expect(actual).to.be.above(minResults);
+        expect(actual).to.be.above(parseInt(minResults, 10));
     };
 
     @then(/^The "(.*)" search result is displayed$/)
     private async thenTheSearchResultIsDisplayed(result: string) {
         let results = (await this.search.getResults());
-        results.should.include.something.that.satisfy(t => t.indexOf(result) == 0);
+        results.should.include.something.that.satisfies(t => t.indexOf(result) == 0);
     };
 
     @then(/^searches related to the entered search query are displayed$/)

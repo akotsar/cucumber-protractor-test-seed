@@ -1,3 +1,5 @@
+import { element, by } from 'protractor';
+
 export class HomePage {
     private privacyLink = element(by.linkText('Privacy'));
 

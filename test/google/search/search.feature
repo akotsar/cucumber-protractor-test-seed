@@ -14,9 +14,9 @@ Feature: Serching in Google
         Then The "<Result>" search result is displayed
 
         Examples:
-            | Page | Result                                             |
-            | 2    | Protractor Cucumber Framework                      |
-            | 5    | Testing AngularJS Apps End to End Using Protractor |
+            | Page | Result                             |
+            | 2    | Protractor Cucumber Framework      |
+            | 5    | Angular automation with Protractor |
 
     Scenario: Display related searches
         Given I am on the Google home page

@@ -18,23 +18,6 @@ Thumbs.db
 /bower_components
 npm-debug.log
 
-# Typing #
-/src/typings/tsd/
-/typings/
-/tsd_typings/
-
-# Dist #
-/public/__build__/
-/__build__/**
-/public/dist/
-/src/*/dist/
-/dist/**
-.webpack.json
-
-# Built ts
-/test/**/*.js
-/test/**/*.js.map
-
 # Screenshots
 /screens
 

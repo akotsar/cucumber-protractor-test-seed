@@ -1,6 +1,8 @@
+import { browser, by, element, ExpectedConditions, $ } from 'protractor';
+
 export class SearchPage {
     private query = element(by.name('q'));
-    private searchButton = $('button[value="Search"]');
+    private searchButton = $('input[value="Google Search"]');
     private resultStats = element(by.id('resultStats'));
     private pager = element(by.css('table[id="nav"]'));
     private resultTitles = element.all(by.css('div.srg div.g h3'));

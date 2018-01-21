@@ -25,11 +25,12 @@ exports.config = {
   },
 
   cucumberOpts: {
+    compiler: "ts:ts-node/register",
     require: [
-      'test/**/*.steps.js',
-      'test/hooks.js'
+      'test/**/*.steps.ts',
+      'test/hooks.ts'
     ],
-    format: 'pretty'
+    strict: true
   },
 
   directConnect: true,

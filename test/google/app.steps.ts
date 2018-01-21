@@ -1,5 +1,4 @@
 import {binding, given, when, then} from "cucumber-tsflow";
-import {HookScenario} from 'cucumber';
 
 import {App} from './app';
 
